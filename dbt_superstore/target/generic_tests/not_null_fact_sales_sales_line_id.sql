@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="sales_line_id", model=get_where_subquery(ref('fact_sales'))) }}

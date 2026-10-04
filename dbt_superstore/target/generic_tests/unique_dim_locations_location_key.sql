@@ -1,0 +1,1 @@
+{{ test_unique(column_name="location_key", model=get_where_subquery(ref('dim_locations'))) }}
