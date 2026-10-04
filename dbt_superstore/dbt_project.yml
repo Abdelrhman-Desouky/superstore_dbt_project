@@ -1,0 +1,24 @@
+name: 'superstore'
+version: '1.0.0'
+config-version: 2
+profile: 'superstore'
+
+model-paths: ["models"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+seed-paths: ["seeds"]
+snapshot-paths: ["snapshots"]
+analysis-paths: ["analyses"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  superstore:
+    staging:
+      +schema: stg
+      +materialized: view
+    marts:
+      +schema: dwh
+      +materialized: table
