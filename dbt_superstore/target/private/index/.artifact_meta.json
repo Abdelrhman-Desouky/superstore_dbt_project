@@ -1,0 +1,24 @@
+{
+  "target_dir": "E:\\NTI DataOps\\tecnical\\dbt\\project\\superstore_project\\dbt_superstore\\target",
+  "fingerprints": {
+    "manifest.json": {
+      "size": 582791,
+      "modified_secs": 1791133364
+    },
+    "run_results.json": {
+      "size": 346,
+      "modified_secs": 1791133364
+    },
+    "semantic_manifest.json": {
+      "size": 234,
+      "modified_secs": 1791133351
+    },
+    "catalog.json": {
+      "size": 11636,
+      "modified_secs": 1790945491
+    }
+  },
+  "write_source": "DirectWrite",
+  "context_dir": null,
+  "context_fingerprints": {}
+}
