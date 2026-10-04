@@ -1,0 +1,129 @@
+==================== 2026-10-02T12:36:25.682903Z | 00000000-0000-0000-0000-000000000000 ====================
+==================== 2026-10-02T12:36:25.693214Z | aaade53e-b33d-47d0-aa4d-e2289e2831a7 ====================
+12:36:25.694572 [info ]: Starting dbt LSP server
+12:36:25.695712 [info ]: Connecting to LSP client on port 8000
+12:36:25.699122 [info ]: Successfully connected to LSP client
+12:36:25.699568 [info ]: Creating LSP service...
+12:36:25.710797 [info ]: Creating LSP server...
+12:36:25.710820 [info ]: Starting LSP server...
+12:36:25.799742 [info ]: Loading profiles.yml
+==================== 2026-10-02T12:36:25.926173Z | 02388a27-c1a6-4a6f-b813-46d6b9f8b320 ====================
+12:36:25.928802 [info ]: Started loading project
+12:36:25.940101 [info ]: Loading profiles.yml
+12:36:25.995264 [debug]:    Started loading packages
+12:36:26.005608 [debug]:     Loaded [  0.01s] packages
+12:36:26.021123 [info ]: Finished loading project [  0.09s]
+12:36:26.029040 [info ]: Started parsing
+12:36:26.135037 [debug]: Finished parsing models/marts/schema.yml [  0.02s]
+12:36:26.135536 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+12:36:26.137111 [debug]: Finished parsing models/staging/sources.yml [  0.00s]
+12:36:26.189113 [debug]: Finished parsing models/marts/agg_monthly_sales.sql [  0.03s]
+12:36:26.190041 [debug]: Finished parsing models/marts/dim_customers.sql [  0.00s]
+12:36:26.210300 [debug]: Finished parsing models/marts/dim_dates.sql [  0.02s]
+12:36:26.211804 [debug]: Finished parsing models/marts/dim_locations.sql [  0.00s]
+12:36:26.212924 [debug]: Finished parsing models/marts/dim_products.sql [  0.00s]
+12:36:26.237074 [debug]: Finished parsing models/marts/fact_sales.sql [  0.02s]
+12:36:26.239293 [debug]: Finished parsing models/staging/stg_superstore.sql [  0.00s]
+12:36:26.429566 [info ]: Finished parsing [  0.40s]
+12:36:26.435460 [info ]: Cached model count updated: 7 models (estimate)
+12:36:26.435485 [info ]: Cached model count updated: 7 models (accurate)
+12:36:26.438272 [info ]: Started scheduling
+12:36:26.445721 [info ]: Finished scheduling [  0.01s]
+12:36:26.445780 [debug]: Compilation - 1 nodes selected: {"model.superstore.stg_superstore"}
+12:36:26.447424 [info ]: Started scheduling
+12:36:26.447829 [info ]: Finished scheduling [  0.00s]
+12:36:26.453186 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "dev", schema: "ods", table: "raw_superstore" }) and interval: None
+12:36:26.480949 [info ]: Started building task graph
+12:36:26.486604 [info ]: Finished building task graph [  0.01s]
+12:36:26.538292 [info ]: Started rendering (1 nodes)
+12:36:26.539239 [info ]: Started model main_stg.stg_superstore
+12:36:26.539461 [debug]: Started rendering model main_stg.stg_superstore
+12:36:26.551120 [debug]: Compiled SQL for node model.superstore.stg_superstore at target\.lsp\compiled\superstore\models\staging\stg_superstore.sql
+12:36:26.552688 [debug]: Finished rendering [  0.01s] model main_stg.stg_superstore [success]
+12:36:26.552720 [info ]: Finished rendering [  0.01s] (1 nodes, 0 skipped, 0 errors)
+12:36:26.553436 [info ]: Started analyzing (1 nodes)
+12:36:26.553450 [debug]: Started analyzing model main_stg.stg_superstore
+12:36:26.618218 [debug]: Finished analyzing [  0.06s] model main_stg.stg_superstore [success]
+12:36:26.618244 [info ]: Finished analyzing [  0.06s] (1 nodes, 0 skipped, 0 errors)
+12:36:26.618253 [info ]:  Succeeded model main_stg.stg_superstore (view) [1 of 1 in 0.08s]
+12:36:26.630383 [info ]: Started scheduling
+12:36:26.630442 [info ]: Finished scheduling [  0.00s]
+12:36:26.630834 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'dev' [704ms]
+Processed: 1 model
+Summary: 1 total | 1 success
+12:36:26.630922 [info ]: Cached model count updated: 7 models (accurate)
+==================== 2026-10-02T12:36:28.169166Z | b2909852-e8cb-4daf-a733-7aa05d494f5f ====================
+12:36:28.169265 [info ]: Started loading project
+12:36:28.169896 [info ]: Loading profiles.yml
+12:36:28.176102 [info ]: Finished loading project [  0.01s]
+12:36:28.196839 [info ]: Cached model count updated: 7 models (estimate)
+12:36:28.196867 [info ]: Cached model count updated: 7 models (accurate)
+12:36:28.196903 [info ]: Started scheduling
+12:36:28.196979 [info ]: Finished scheduling [  0.00s]
+12:36:28.196998 [debug]: Compilation - 7 nodes selected: {"model.superstore.agg_monthly_sales", "model.superstore.dim_customers", "model.superstore.dim_dates", "model.superstore.dim_locations", "model.superstore.dim_products", "model.superstore.fact_sales", "model.superstore.stg_superstore"}
+12:36:28.199460 [info ]: Started building task graph
+12:36:28.199568 [info ]: Finished building task graph [  0.00s]
+12:36:28.201525 [info ]: Started rendering (7 nodes)
+12:36:28.201566 [info ]: Started model main_dwh.fact_sales
+12:36:28.201579 [debug]: Started rendering model main_dwh.fact_sales
+12:36:28.201618 [info ]: Started model main_dwh.dim_products
+12:36:28.201632 [debug]: Started rendering model main_dwh.dim_products
+12:36:28.201647 [info ]: Started model main_dwh.dim_locations
+12:36:28.201659 [debug]: Started rendering model main_dwh.dim_locations
+12:36:28.201671 [info ]: Started model main_dwh.dim_dates
+12:36:28.201684 [debug]: Started rendering model main_dwh.dim_dates
+12:36:28.201700 [info ]: Started model main_dwh.dim_customers
+12:36:28.201709 [debug]: Started rendering model main_dwh.dim_customers
+12:36:28.201719 [info ]: Started model main_dwh.agg_monthly_sales
+12:36:28.201729 [debug]: Started rendering model main_dwh.agg_monthly_sales
+12:36:28.201750 [info ]: Started model main_stg.stg_superstore
+12:36:28.201757 [debug]: Started rendering model main_stg.stg_superstore
+12:36:28.205313 [debug]: Compiled SQL for node model.superstore.dim_products at target\.lsp\compiled\superstore\models\marts\dim_products.sql
+12:36:28.205631 [debug]: Finished rendering [  0.00s] model main_dwh.dim_products [success]
+12:36:28.205719 [info ]: Started analyzing (7 nodes)
+12:36:28.205740 [debug]: Started analyzing model main_dwh.dim_products
+12:36:28.205881 [debug]: Compiled SQL for node model.superstore.dim_customers at target\.lsp\compiled\superstore\models\marts\dim_customers.sql
+12:36:28.205908 [debug]: Compiled SQL for node model.superstore.dim_locations at target\.lsp\compiled\superstore\models\marts\dim_locations.sql
+12:36:28.205978 [debug]: Compiled SQL for node model.superstore.fact_sales at target\.lsp\compiled\superstore\models\marts\fact_sales.sql
+12:36:28.206104 [debug]: Finished rendering [  0.00s] model main_dwh.dim_customers [success]
+12:36:28.206159 [debug]: Started analyzing model main_dwh.dim_customers
+12:36:28.206198 [debug]: Finished rendering [  0.00s] model main_dwh.dim_locations [success]
+12:36:28.206211 [debug]: Started analyzing model main_dwh.dim_locations
+12:36:28.206231 [debug]: Finished rendering [  0.00s] model main_dwh.fact_sales [success]
+12:36:28.206245 [debug]: Started analyzing model main_dwh.fact_sales
+12:36:28.207446 [debug]: Compiled SQL for node model.superstore.stg_superstore at target\.lsp\compiled\superstore\models\staging\stg_superstore.sql
+12:36:28.207751 [debug]: Finished rendering [  0.01s] model main_stg.stg_superstore [success]
+12:36:28.207827 [debug]: Started analyzing model main_stg.stg_superstore
+12:36:28.208012 [debug]: Compiled SQL for node model.superstore.dim_dates at target\.lsp\compiled\superstore\models\marts\dim_dates.sql
+12:36:28.208305 [debug]: Finished rendering [  0.01s] model main_dwh.dim_dates [success]
+12:36:28.208371 [debug]: Started analyzing model main_dwh.dim_dates
+12:36:28.209090 [debug]: Finished analyzing [  0.00s] model main_dwh.dim_products [success]
+12:36:28.209146 [info ]:  Succeeded model main_dwh.dim_products (table) [2 of 7 in 0.01s]
+12:36:28.209294 [debug]: Compiled SQL for node model.superstore.agg_monthly_sales at target\.lsp\compiled\superstore\models\marts\agg_monthly_sales.sql
+12:36:28.209512 [debug]: Finished rendering [  0.01s] model main_dwh.agg_monthly_sales [success]
+12:36:28.209552 [info ]: Finished rendering [  0.01s] (7 nodes, 0 skipped, 0 errors)
+12:36:28.209581 [debug]: Started analyzing model main_dwh.agg_monthly_sales
+12:36:28.210880 [debug]: Finished analyzing [  0.00s] model main_dwh.dim_customers [success]
+12:36:28.210917 [info ]:  Succeeded model main_dwh.dim_customers (table) [5 of 7 in 0.01s]
+12:36:28.213540 [debug]: Finished analyzing [  0.01s] model main_dwh.dim_locations [success]
+12:36:28.213580 [info ]:  Succeeded model main_dwh.dim_locations (table) [3 of 7 in 0.01s]
+12:36:28.213866 [debug]: Finished analyzing [  0.01s] model main_dwh.fact_sales [success]
+12:36:28.213894 [info ]:  Succeeded model main_dwh.fact_sales (table) [1 of 7 in 0.01s]
+12:36:28.213952 [debug]: Finished analyzing [  0.00s] model main_dwh.agg_monthly_sales [success]
+12:36:28.213977 [info ]:  Succeeded model main_dwh.agg_monthly_sales (table) [6 of 7 in 0.01s]
+12:36:28.215686 [debug]: Finished analyzing [  0.01s] model main_stg.stg_superstore [success]
+12:36:28.215726 [info ]:  Succeeded model main_stg.stg_superstore (view) [7 of 7 in 0.01s]
+12:36:28.215753 [debug]: Finished analyzing [  0.01s] model main_dwh.dim_dates [success]
+12:36:28.215761 [info ]: Finished analyzing [  0.01s] (7 nodes, 0 skipped, 0 errors)
+12:36:28.215768 [info ]:  Succeeded model main_dwh.dim_dates (table) [4 of 7 in 0.01s]
+12:36:28.219766 [info ]: Started scheduling
+12:36:28.219824 [info ]: Finished scheduling [  0.00s]
+12:36:28.219877 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'dev' [50ms]
+Processed: 7 models
+Summary: 7 total | 7 success
+12:36:28.219977 [info ]: Cached model count updated: 7 models (accurate)
+12:39:15.885607 [debug]: Ignoring unsupported LSP notification
